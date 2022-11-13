@@ -1,10 +1,10 @@
 import React from 'react';
 import {Container} from "./styles";
 
-export const Home = (props) => {
+export const Properties = (props) => {
   return (
     <Container>Home</Container>
   );
 };
 
-export default Home;
+export default Properties;
