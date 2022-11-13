@@ -1,5 +1,4 @@
-# Getting Started with 
-### [`zakaryadev`](https://github.com/zakaryadev)
+# Getting Started with [zakaryadev](https://github.com/zakaryadev)
 
 This project available in github [Houzing](https://github.com/zakaryadev/houzing).
 
