@@ -3,7 +3,7 @@ import {Container} from "./styles";
 
 export const Properties = (props) => {
   return (
-    <Container>Home</Container>
+    <Container>PropertiesPage</Container>
   );
 };
 

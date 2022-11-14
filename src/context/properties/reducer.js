@@ -7,3 +7,5 @@ export const reducer  = (state, {type, action}) => {
       return state;
   }
 }
+
+export default { reducer };

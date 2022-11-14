@@ -13,7 +13,10 @@ body {
   /* color */
   --colorPrimary: #0D263B;
   --colorSecondary: #696969;
+  --colorThird: #aeaeae;
   /* background */
   --backgroundPrimary: #0061DF;
   --backgroundPrimary: #0061DF;
+  /* padding */
+  --padding: 0 130px;
 }

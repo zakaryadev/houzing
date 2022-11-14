@@ -1,14 +1,19 @@
 import React from 'react';
 import {BrowserRouter, Navigate, Route, Routes} from "react-router-dom";
+import Navbar from '../components/Navbar';
+import { navbar } from '../utils/navbar';
 
 const Index = () => {
   return (
     <BrowserRouter>
       <Routes>
-        <Route path='/home' element={<h1>home</h1>} />
-        <Route path='/properties' element={<h1>properties</h1>} />
+        <Route element={<Navbar />}>
+          {navbar.map(({element,path}, index) => {
+              return <Route key={index} path={path} element={element}></Route>
+          })}
+        </Route>
         <Route path='/*' element={<h1>404 NOT FOUND</h1>} />
-        <Route path='/' element={<Navigate to={'/Index'} />} />
+        <Route path='/' element={<Navigate to={'/home'} />} />
       </Routes>
     </BrowserRouter>
   );
