@@ -8,4 +8,4 @@ export const reducer  = (state, {type, action}) => {
   }
 }
 
-export default { reducer };
+export default reducer;
