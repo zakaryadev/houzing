@@ -38,7 +38,7 @@ const Container = styled.button`
   align-items: center;
   border-radius: 2px;
   min-width: 120px;
-
+  cursor: pointer;
   font-size: ${({ fontSize }) => (fontSize ? `${fontSize}px` : "14px")};
   height: ${({ height }) => (height ? `${height}px` : "44px")};
   width: ${({ width }) => (width ? `${width}px` : "44px")};

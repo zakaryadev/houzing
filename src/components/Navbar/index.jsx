@@ -2,6 +2,7 @@ import React from "react";
 import { Outlet, useNavigate } from "react-router-dom";
 import {Container, Link, Logo, Main, Section, Wrapper} from "./style";
 import { navbar } from "../../utils/navbar";
+import { Button } from "../Generic";
 
 const Navbar = () => {
   const navigate = useNavigate();
@@ -26,7 +27,7 @@ const Navbar = () => {
             })}
           </Section>
           <Section>
-            <button>Login</button>
+            <Button type={'dark'}>Sign in</Button>
           </Section>
         </Wrapper>
       </Main>
