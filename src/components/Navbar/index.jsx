@@ -13,8 +13,8 @@ const Navbar = () => {
             <Logo /> <h3>Houzing</h3>
           </Section>
           <Section>
-            {navbar.map(({ title, path}, index) => {
-              return (
+            {navbar.map(({ title, path, hidden}, index) => {
+              return !hidden && (
                 <Link
                   className={({ isActive }) => isActive && "active"}
                   key={index}

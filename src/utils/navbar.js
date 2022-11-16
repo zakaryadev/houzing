@@ -25,6 +25,6 @@ export const navbar = [
     title: "Contacts",
     path: "/contacts",
     private: false,
-    hidden: false,
+    hidden: true,
   },
 ];
