@@ -19,4 +19,41 @@ body {
   --backgroundPrimary: #0061DF;
   /* padding */
   --padding: 0 130px;
+  /* font family */
+  --fontFamily: 'Montserrat', sans-serif;;
+}
+
+h3 {
+  color: #fff !important;
+  margin-bottom: 0 !important;
+}
+
+.subTitle {
+  font-family: 'Montserrat';
+  font-style: normal;
+  font-weight: 600;
+  font-size: 16px;
+  line-height: 24px;
+  color: #0D263B;
+}
+
+.inputs {
+  display: flex;
+  flex-direction: row;
+  justify-content: flex-start;
+  margin: 10px 0;
+  gap: 10px;
+  width: fit-content;
+}
+
+.btn-container-bg {
+  background: #F6F8F9;
+}
+
+.btn-container {
+
+  display: flex;
+  flex-direction: row;
+  justify-content: flex-end;
+  gap: 10px;
 }

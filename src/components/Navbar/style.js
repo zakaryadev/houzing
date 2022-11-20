@@ -12,6 +12,7 @@ const Main = styled.div`
   display: flex;
   justify-content: center;  
   background: var(--colorPrimary);
+  color: #fff !important;
 `;
 
 const Wrapper = styled.div`
@@ -35,17 +36,24 @@ const Section = styled.div`
   .active {
     color: #b8ff06;
   }
+  
 `;
 
 const Logo = styled(LogoImg)`
   width: 30px;
   margin-right: 12px;
+  & path {
+    fill: #ffff;
+  }
 `;
 
 const Link = styled(NavLink)`
   text-decoration: none;
   color: #fff;
   margin: 0 32px;
+  :hover {
+    color: #b8ff06 !important;
+  }
 `;
 
 export { Container, Wrapper, Section, Logo, Link, Main };

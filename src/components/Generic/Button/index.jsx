@@ -4,6 +4,7 @@ import { Container } from "./style";
 export const Button = ({
   children,
   type,
+  icon,
   onClick,
   width,
   height,
@@ -16,6 +17,7 @@ export const Button = ({
       type={type}
       width={width}
       height={height}
+      icon={icon}
     >
       {children || "Generic Button"}
     </Container>

@@ -1,8 +1,9 @@
 import React from "react";
 import { Outlet, useNavigate } from "react-router-dom";
-import {Container, Link, Logo, Main, Section, Wrapper} from "./style";
+import {Container, Link, Logo, Main, Section, Wrapper } from "./style";
 import { navbar } from "../../utils/navbar";
 import { Button } from "../Generic";
+import Filter from "../Filter";
 
 const Navbar = () => {
   const navigate = useNavigate();
@@ -27,10 +28,11 @@ const Navbar = () => {
             })}
           </Section>
           <Section>
-            <Button type={'dark'}>Sign in</Button>
+            <Button onClick={() => navigate('/signin')} type={'dark'}>Sign in</Button>
           </Section>
         </Wrapper>
       </Main>
+      <Filter />
       <Outlet />
     </Container>
   );
