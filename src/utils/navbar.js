@@ -25,7 +25,7 @@ export const navbar = [
     title: "Contacts",
     path: "/contacts",
     private: false,
-    hidden: true,
+    hidden: false,
   },
   {
     id: useId,

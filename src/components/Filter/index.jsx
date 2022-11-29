@@ -47,7 +47,7 @@ export const Filter = () => {
       <Wrapper>
         <Container margin={"10px 0"}>
           <Input placeholder={"Enter an address, neighborhood, city, or ZIP code"} icon={<Icons.Houses />} />
-          <Dropdown overlay={items} placement="bottomRight" align={'center'} arrow={{ pointAtCenter: true }} >
+          <Dropdown overlay={items} menu={"NULL"} placement="bottomRight" align={'center'} arrow={{ pointAtCenter: true }} >
             <div>
               <Button icon={true} width={131} type={'light'}><Icons.Filter /> Advanced</Button>
             </div>
