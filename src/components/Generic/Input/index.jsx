@@ -1,4 +1,4 @@
-import React, { forwardRef, useTransition } from 'react';
+import React, { forwardRef } from 'react';
 import {Container, Wrapper, Icon} from './style';
 
 
@@ -15,7 +15,6 @@ export const Input = forwardRef(({ onChange, defaultValue, placeholder, name, wi
         width={width}
         height={height}
         ref={ref}
-        onChange={() => console.log(ref.current.value)}
       />
     </Wrapper>
   );
