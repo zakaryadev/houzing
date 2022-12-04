@@ -74,8 +74,4 @@ const Divider = styled.div`
   width: 100%;
 `;
 
-const Footer = styled.div`
-  border-bottom: 1px solid #e6e9ec;
-`;
-
-export { Container, Img, Content, Details, Icons, Divider, Footer };
+export { Container, Img, Content, Details, Icons, Divider };

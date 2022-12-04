@@ -1,5 +1,5 @@
 import React from "react";
-import {Container, Content, Details, Divider, Footer, Icons, Img} from "./style";
+import {Container, Content, Details, Divider, Icons, Img} from "./style";
 import noImg from '../../assets/img/noimg.jpeg';
 export const HouseCard = ({ url, title, info, bed, bath, garage, size,  }) => {
   return (
