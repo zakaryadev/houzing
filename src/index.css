@@ -1,6 +1,7 @@
 @import url('https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;1,100;1,300;1,400;1,600;1,700&display=swap');
 
 * {
+  user-select: none;
   margin: 0;
   padding: 0;
 }
@@ -29,12 +30,26 @@ h3 {
 }
 
 .subTitle {
-  font-family: 'Montserrat';
+  font-family: 'Montserrat', sans-serif;
   font-style: normal;
   font-weight: 600;
   font-size: 16px;
   line-height: 24px;
   color: #0D263B;
+}
+
+.info {
+  font-family: 'Montserrat', sans-serif;
+  font-style: normal;
+  font-weight: 400;
+  font-size: 14px;
+  line-height: 20px;
+  color: #696969;
+}
+
+.icons {
+  width: 30px;
+  height: 30px;
 }
 
 .inputs {
@@ -51,9 +66,25 @@ h3 {
 }
 
 .btn-container {
-
   display: flex;
   flex-direction: row;
   justify-content: flex-end;
   gap: 10px;
+}
+
+.icon-bg {
+  width: 30px;
+  height: 30px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  background: #F6F8F9;
+  border-radius: 500px;
+  margin-left: 20px;
+  cursor: pointer;
+}
+
+.icon-bg:active {
+  transform: scale(0.9);
 }
