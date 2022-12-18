@@ -1,37 +1,39 @@
 import React from "react";
 import {Container, Content, Details, Divider, Icons, Img} from "./style";
 import noImg from '../../assets/img/noimg.jpeg';
-export const HouseCard = ({ url, title, info, bed, bath, garage, size,  }) => {
+export const HouseCard = ({ data }) => {
+  const { attachments, salePrice, price, houseDetails, address, city, country, description, category,} = data;
   return (
     <Container>
-      <Img src={ url || noImg } />
+      <Img src={(attachments && attachments[0]?.imgPath) || noImg}  />
       <Content>
-        <div className='subTitle'>{ title || 'New Apartment Nice Wiew' }</div>
-        <div className='info'>{ info || 'Quincy St, Brooklyn, NY, USA' }</div>
+        <div className='subTitle inline'>{city}, {country}, {description}</div>
+        <div className='info'>{address || 'Quincy St, Brooklyn, NY, USA'} -{' '}
+          {category?.name || 'Category'} {houseDetails?.room || 0}-rooms</div>
         <Details>
           <Details.Item>
             <Icons.Bed />
-            <div className='info'>{bed || '0'} Beds</div>
+            <div className='info'>{houseDetails?.beds || '0'} Beds</div>
           </Details.Item>
           <Details.Item>
             <Icons.Bath />
-            <div className='info'>{bath || '0'} Baths</div>
+            <div className='info'>{houseDetails?.bath || '0'} Baths</div>
           </Details.Item>
           <Details.Item>
             <Icons.Garage />
-            <div className='info'>{garage || '0'} Garage</div>
+            <div className='info'>{houseDetails?.garage || '0'} Garage</div>
           </Details.Item>
           <Details.Item>
             <Icons.HomeSize />
-            <div className='info'>{size || '1200'} Sq Ft</div>
+            <div className='info'>{houseDetails?.area || '1200'} Sq Ft</div>
           </Details.Item>
         </Details>
       </Content>
       <Divider />
       <Content footer>
         <Details.Item footer>
-          <div className='info'>$2,800/mo</div>
-          <div className='subTitle'>$7,500/mo</div>
+          <div className='info'>${salePrice}/mo</div>
+          <div className='subTitle'>${price}/mo</div>
         </Details.Item>
         <Details.Item row>
           <Icons.Resize />

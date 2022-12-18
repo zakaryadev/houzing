@@ -1,9 +1,28 @@
-import React from 'react';
-import {Container} from "./styles";
+import React, { useEffect, useState } from 'react';
+import {Container, Wrapper} from "./styles";
+import HouseCard from "../HouseCard";
+export const Properties = () => {
+  const [data, setData] = useState([])
+  const { REACT_APP_BASE_URL: url } = process.env;
 
-export const Properties = (props) => {
+  useEffect(() => {
+    fetch(`${url}houses/list`)
+      .then(res => res.json())
+      .then(data => {
+        setData(data.data)
+      });
+  },[])
+
   return (
-    <Container>PropertiesPage</Container>
+    <Wrapper>
+      <Container>
+        {
+          data.map((item,index) => {
+            return <HouseCard key={index} data={item} />
+          })
+        }
+      </Container>
+    </Wrapper>
   );
 };
 

@@ -20,7 +20,7 @@ const rotateArrow = ({ to }) => {
 
 const Container = styled.div`
   position: relative;
-  height: 571px;
+  
 `;
 
 const Arrow = styled(arrow)`
@@ -41,7 +41,6 @@ const Arrow = styled(arrow)`
 
 const Img = styled.img`
   width: 100%;
-  height: 571px;
 `;
 
 const Blur = styled.div`
