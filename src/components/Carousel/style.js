@@ -16,7 +16,7 @@ const rotateArrow = ({ to }) => {
     default:
       return null;
   }
-}
+};
 
 const Container = styled.div`
   position: relative;
@@ -26,7 +26,7 @@ const Container = styled.div`
 const Arrow = styled(arrow)`
   position: absolute;
   top: 50%;
-  background: rgba(255,255,255,0.1);
+  background: rgba(255, 255, 255, 0.1);
   width: 50px;
   height: 50px;
   padding: 18px;
@@ -34,7 +34,7 @@ const Arrow = styled(arrow)`
   cursor: pointer;
   ${rotateArrow};
   :hover {
-    background: rgba(255,255,255,0.4);
+    background: rgba(255, 255, 255, 0.4);
   }
   z-index: 5;
 `;
@@ -50,7 +50,7 @@ const Blur = styled.div`
   right: 0;
   bottom: 0;
   left: 0;
-  background: rgba(0,0,0,0.7);
+  background: rgba(0, 0, 0, 0.7);
 `;
 
 const Content = styled.div`
@@ -64,9 +64,9 @@ const Content = styled.div`
   justify-content: center;
   align-items: center;
   color: #ffffff;
-`
+`;
 Content.Title = styled.h1`
-  font-family: 'Montserrat';
+  font-family: "Montserrat";
   font-style: normal;
   font-weight: 700;
   font-size: 44px;
@@ -76,7 +76,7 @@ Content.Title = styled.h1`
 `;
 
 Content.Desc = styled.div`
-  font-family: 'Montserrat';
+  font-family: "Montserrat";
   font-style: normal;
   font-weight: 400;
   font-size: 16px;
@@ -85,7 +85,7 @@ Content.Desc = styled.div`
 `;
 
 Content.Price = styled.div`
-  font-family: 'Montserrat';
+  font-family: "Montserrat";
   font-style: normal;
   font-weight: 600;
   font-size: 28px;
@@ -94,6 +94,4 @@ Content.Price = styled.div`
   color: #ffffff;
 `;
 
-
-
-export { Container, Arrow , Img, Blur, Content };
+export { Container, Arrow, Img, Blur, Content };

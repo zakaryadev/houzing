@@ -7,7 +7,6 @@ export const Home = (props) => {
   return (
       <Container>
         <GenCarousel />
-        <HouseCard />
       </Container>
   );
 };

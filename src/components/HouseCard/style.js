@@ -7,19 +7,17 @@ import { ReactComponent as love } from "../../assets/icons/love.svg";
 import { ReactComponent as resize } from "../../assets/icons/resize.svg";
 
 const Container = styled.div`
-  width: 380px;
   height: 430px;
   filter: drop-shadow(0px 20px 38px rgba(0, 0, 0, 0.06))
     drop-shadow(0px 7px 46px rgba(0, 0, 0, 0.06))
     drop-shadow(0px 8px 15px rgba(0, 0, 0, 0.06));
-  margin: 100px;
   border-radius: 3px;
 `;
 
 const Img = styled.img`
   border-radius: 3px 3px 0 0;
   width: 100%;
-  max-height: 220px;
+  height: 220px;
   border: 1px solid transparent;
   border-bottom: none;
 `;
@@ -33,6 +31,7 @@ const Content = styled.div`
   padding: ${({ footer }) => footer && '10px 20px'};
   background: #ffffff;
   border: 1px solid #e6e9ec;
+  border-bottom: none;
   border-top: none;
 `;
 

@@ -88,3 +88,9 @@ h3 {
 .icon-bg:active {
   transform: scale(0.9);
 }
+
+.inline {
+  display: flex;
+  overflow: hidden;
+  white-space: nowrap;
+}

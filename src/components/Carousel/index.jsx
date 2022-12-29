@@ -5,9 +5,7 @@ import img1 from '../../assets/img/house1.png';
 import img2 from '../../assets/img/house2.png';
 
 export const GenCarousel = () => {
-  const onChange = (currentSlide) => {
-    console.log(currentSlide);
-  };
+
   const slider = useRef();
   const onMove = ({target: {dataset : {name}}}) => {
     if(name === 'next') slider.current.next();
@@ -15,7 +13,7 @@ export const GenCarousel = () => {
   }
   return (
     <Container>
-      <Carousel ref={slider} afterChange={onChange}>
+      <Carousel ref={slider}>
         <Img src={img1} />
         <Img src={img2} />
       </Carousel>
