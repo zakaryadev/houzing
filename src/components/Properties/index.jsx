@@ -12,6 +12,7 @@ export const Properties = () => {
       .then((res) => {
         setData(res?.data || []);
       });
+    // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [search]);
 
   return (
