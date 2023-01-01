@@ -1,7 +1,7 @@
 import React from "react";
 import {Container, Content, Details, Divider, Icons, Img} from "./style";
 import noImg from '../../assets/img/noimg.jpeg';
-export const HouseCard = ({ data }) => {
+export const HouseCard = ({ data = {}}) => {
   const { attachments, salePrice, price, houseDetails, address, city, country, description, category,} = data;
   return (
     <Container>

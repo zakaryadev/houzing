@@ -20,7 +20,7 @@ const rotateArrow = ({ to }) => {
 
 const Container = styled.div`
   position: relative;
-  height: 571px;
+  height: fit-content;
 `;
 
 const Arrow = styled(arrow)`

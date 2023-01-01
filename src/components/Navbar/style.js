@@ -10,7 +10,7 @@ const Container = styled.div`
 
 const Main = styled.div`
   display: flex;
-  justify-content: center;  
+  justify-content: center;
   background: var(--colorPrimary);
   color: #fff !important;
 `;
@@ -30,13 +30,12 @@ const Wrapper = styled.div`
 const Section = styled.div`
   display: flex;
   align-items: center;
-  cursor: ${({logo}) => logo && "pointer"};
+  cursor: ${({ logo }) => logo && "pointer"};
   user-select: none;
 
   .active {
     color: #b8ff06;
   }
-  
 `;
 
 const Logo = styled(LogoImg)`

@@ -8,6 +8,8 @@ import { ReactComponent as resize } from "../../assets/icons/resize.svg";
 
 const Container = styled.div`
   height: 430px;
+  min-width: 343px;
+  max-width: 380px;
   filter: drop-shadow(0px 20px 38px rgba(0, 0, 0, 0.06))
     drop-shadow(0px 7px 46px rgba(0, 0, 0, 0.06))
     drop-shadow(0px 8px 15px rgba(0, 0, 0, 0.06));
@@ -17,18 +19,19 @@ const Container = styled.div`
 const Img = styled.img`
   border-radius: 3px 3px 0 0;
   width: 100%;
-  height: 220px;
+  min-height: 220px;
+  max-height: 220px;
   border: 1px solid transparent;
   border-bottom: none;
 `;
 
 const Content = styled.div`
   display: flex;
-  flex-direction: ${({ footer }) => (footer ? 'row' : 'column')};
-  justify-content: ${({ footer }) => footer && 'space-between'};
+  flex-direction: ${({ footer }) => (footer ? "row" : "column")};
+  justify-content: ${({ footer }) => footer && "space-between"};
   padding: 16px 20px;
   padding-top: 24px;
-  padding: ${({ footer }) => footer && '10px 20px'};
+  padding: ${({ footer }) => footer && "10px 20px"};
   background: #ffffff;
   border: 1px solid #e6e9ec;
   border-bottom: none;
@@ -45,21 +48,25 @@ const Details = styled.div`
 Details.Item = styled.div`
   display: flex;
   flex-direction: column;
-  align-items: ${({footer}) => footer ? "left" : "center"};
-  flex-direction: ${({row}) => row ? "row" : "column"};
+  align-items: ${({ footer }) => (footer ? "left" : "center")};
+  flex-direction: ${({ row }) => (row ? "row" : "column")};
 `;
 
-const Icons = styled.div`
-  
-`;
+const Icons = styled.div``;
 
-Icons.Bed = styled(bed)`margin-bottom: 5px;`;
-Icons.Bath = styled(bath)`margin-bottom: 5px;`;
-Icons.Garage = styled(garage)`margin-bottom: 5px;`;
-Icons.HomeSize = styled(homeSize)`margin-bottom: 5px;`;
-Icons.Love = styled(love)`
-  
+Icons.Bed = styled(bed)`
+  margin-bottom: 5px;
 `;
+Icons.Bath = styled(bath)`
+  margin-bottom: 5px;
+`;
+Icons.Garage = styled(garage)`
+  margin-bottom: 5px;
+`;
+Icons.HomeSize = styled(homeSize)`
+  margin-bottom: 5px;
+`;
+Icons.Love = styled(love)``;
 Icons.Resize = styled(resize)`
   cursor: pointer;
   :active {

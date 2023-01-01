@@ -1,11 +1,23 @@
+import React from "react";
+import Spinner from "../components/Spinner/Spinner";
 import useId from "../hooks/useId";
 import ContactsPage from "../pages/Contacts/index";
-import HomePage from "../pages/Home/index";
-import PropertiesPage from "../pages/Properties/index";
+const HomePage = React.lazy(() => import("../pages/Home/index"));
+const PropertiesPage = React.lazy(() => import("../pages/Properties/index"));
 export const navbar = [
   {
     id: useId,
-    element: <HomePage />,
+    element: (
+      <React.Suspense
+        fallback={
+          <React.Fragment>
+            <Spinner />
+          </React.Fragment>
+        }
+      >
+        <HomePage />
+      </React.Suspense>
+    ),
     title: "Home",
     path: "/home",
     private: false,
@@ -13,7 +25,17 @@ export const navbar = [
   },
   {
     id: useId,
-    element: <PropertiesPage />,
+    element: (
+      <React.Suspense
+        fallback={
+          <React.Fragment>
+            <Spinner />
+          </React.Fragment>
+        }
+      >
+        <PropertiesPage />
+      </React.Suspense>
+    ),
     title: "Properties",
     path: "/properties",
     private: false,

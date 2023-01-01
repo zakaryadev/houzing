@@ -6,8 +6,8 @@ import { uzeReplace } from "../../hooks/useReplace";
 import { useNavigate, useLocation } from "react-router-dom";
 import useSearch from "../../hooks/useSearch";
 
+
 export const Filter = () => {
-  const query = useSearch();
   const countryRef = useRef();
   const regionRef = useRef();
   const cityRef = useRef();
@@ -19,15 +19,15 @@ export const Filter = () => {
 
   const minPriceRef = useRef();
   const maxPriceRef = useRef();
-
+  const query = useSearch();
   const navigate = useNavigate();
   const location = useLocation();
-  const OnChange = ({ target: { name, value, placeholder } }) => {
+  const OnChange = ({ target: { name, value } }) => {
     navigate(`${location?.pathname}${uzeReplace(name, value)}`);
   };
   const items = (
     <MenuWrapper shadow={true}>
-      <h1 className="subTitle">Adress</h1>
+      <h1 className="subTitle">Address</h1>
       <Section>
         <Input
           defaultValue={query.get("country")}
@@ -39,9 +39,9 @@ export const Filter = () => {
           placeholder={"Country"}
         />
         <Input
-          defaultValue={query.get("region")}
+          defaultValue={query.get("address")}
           onChange={OnChange}
-          name="region"
+          name="address"
           ref={regionRef}
           width={200}
           height={44}
@@ -79,6 +79,7 @@ export const Filter = () => {
       </Section>
     </MenuWrapper>
   );
+
   return (
     <Wrapper>
       <Container margin={"10px 0"}>
@@ -88,7 +89,7 @@ export const Filter = () => {
         />
         <Dropdown
           overlay={items}
-          menu={"NULL"}
+          menu={null}
           placement="bottomRight"
           align={"center"}
           arrow={{ pointAtCenter: true }}
@@ -100,6 +101,7 @@ export const Filter = () => {
             </Button>
           </div>
         </Dropdown>
+        
         <Button icon={true} width={180} type={"primary"}>
           {" "}
           <Icons.Search /> Search
