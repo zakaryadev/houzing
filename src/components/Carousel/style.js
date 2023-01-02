@@ -64,6 +64,8 @@ const Content = styled.div`
   justify-content: center;
   align-items: center;
   color: #ffffff;
+  max-width: 1440px;
+  margin: 0 auto;
 `;
 Content.Title = styled.h1`
   font-family: "Montserrat";

@@ -2,14 +2,13 @@ import styled from "styled-components";
 import { ReactComponent as HouseIcon } from "../../assets/icons/HouseIcon.svg";
 
 const Container = styled.div`
-  //margin: 40px;
+  cursor: pointer;
   min-height: 200px;
   max-height: 350px;
   min-width: 160px;
   max-width: 280px;
-  filter: drop-shadow(0px 20px 38px rgba(0, 0, 0, 0.06))
-    drop-shadow(0px 7px 46px rgba(0, 0, 0, 0.06))
-    drop-shadow(0px 8px 15px rgba(0, 0, 0, 0.06));
+  filter: drop-shadow(0px 20px 38px rgba(0, 0, 0, 0));
+  display: inline-block;
   border-radius: 3px;
   background: #ffffff;
 `;

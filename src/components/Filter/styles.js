@@ -11,7 +11,6 @@ const Container = styled.div`
   padding: var(--padding);
   width: 100%;
   max-width: 1440px;
-  
 `;
 const Wrapper = styled.div`
   display: flex;

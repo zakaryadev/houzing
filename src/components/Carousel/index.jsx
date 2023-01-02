@@ -24,9 +24,9 @@ export const GenCarousel = () => {
           112 Glenwood Ave Hyde Park, Boston, MA
         </Content.Desc>
         <Content.Price>5,250 / month</Content.Price>
+        <Arrow onClick={onMove} data-name='prev' to={"left"} />
+        <Arrow onClick={onMove} data-name='next' to={"right"} />
       </Content>
-    <Arrow onClick={onMove} data-name='prev' to={"left"} />
-    <Arrow onClick={onMove} data-name='next' to={"right"} />
     </Container>
   );
 };

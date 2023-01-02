@@ -104,3 +104,48 @@ h3 {
   overflow: hidden;
   white-space: nowrap;
 }
+
+.slick-dots {
+  margin: auto 0 !important;
+}
+
+.sectionTitle {
+  font-family: 'Montserrat';
+  font-style: normal;
+  font-weight: 600;
+  font-size: 28px;
+  line-height: 36px;
+  text-align: center;
+  letter-spacing: -0.02em;
+  color: #0D263B;
+  margin-bottom: 8px;
+}
+
+.sectionSubTitle {
+  font-family: 'Montserrat';
+  font-style: normal;
+  font-weight: 400;
+  font-size: 16px;
+  line-height: 24px;
+  text-align: center;
+  color: #696969;
+  margin-bottom: 32px;
+}
+
+.dots {
+  margin-top: 20px;
+  display: block;
+  background: #0061DF;
+  width: 8px;
+  height: 8px;
+  border-radius: 50%;
+}
+
+.dots-active {
+  display: block;
+  background: #FFFFFF;
+  border: 2px solid #0061DF;
+  width: 10px;
+  height: 10px;
+  border-radius: 50%;
+}
