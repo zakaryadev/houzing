@@ -1,30 +1,54 @@
-import React, { useRef } from "react";
-import { Container, Icons, MenuWrapper, Section, Wrapper } from "./styles";
+import React, { useEffect, useState } from "react";
+import {
+  Container,
+  Icons,
+  MenuWrapper,
+  Section,
+  Wrapper,
+  SelectAnt,
+} from "./styles";
 import { Button, Input } from "../Generic";
-import { Dropdown } from "antd";
 import { uzeReplace } from "../../hooks/useReplace";
-import { useNavigate, useLocation } from "react-router-dom";
+import { useLocation, useNavigate } from "react-router-dom";
 import useSearch from "../../hooks/useSearch";
-
+import { Dropdown } from "antd";
 
 export const Filter = () => {
-  const countryRef = useRef();
-  const regionRef = useRef();
-  const cityRef = useRef();
-  const zipCodeRef = useRef();
-
-  const roomsRef = useRef();
-  const sizeRef = useRef();
-  const sortRef = useRef();
-
-  const minPriceRef = useRef();
-  const maxPriceRef = useRef();
   const query = useSearch();
   const navigate = useNavigate();
   const location = useLocation();
+
+  const { REACT_APP_BASE_URL: url } = process.env;
+  const [data, setData] = useState([]);
+  const [value, setValue] = useState("Select");
+
+  useEffect(() => {
+    fetch(`${url}categories/list`)
+      .then((res) => res.json())
+      .then((res) => {
+        setData(res?.data || []);
+      });
+    // eslint-disable-next-line react-hooks/exhaustive-deps
+  }, []);
+
+  useEffect(() => {
+    let [res] = data.filter(
+      (ctg) => ctg.id === Number(query.get("category_id"))
+    );
+    res?.name && setValue(res?.name);
+    // eslint-disable-next-line react-hooks/exhaustive-deps
+  }, [location?.search, data]);
+
+  const handleChange = (category_id) => {
+    navigate(`/properties/${uzeReplace("category_id", category_id)}`);
+  };
+  const handleSort = (value) => {
+    navigate(`/properties/${uzeReplace("sort", value)}`);
+  }
   const OnChange = ({ target: { name, value } }) => {
     navigate(`${location?.pathname}${uzeReplace(name, value)}`);
   };
+
   const items = (
     <MenuWrapper shadow={true}>
       <h1 className="subTitle">Address</h1>
@@ -33,7 +57,6 @@ export const Filter = () => {
           defaultValue={query.get("country")}
           onChange={OnChange}
           name="country"
-          ref={countryRef}
           width={200}
           height={44}
           placeholder={"Country"}
@@ -42,7 +65,6 @@ export const Filter = () => {
           defaultValue={query.get("address")}
           onChange={OnChange}
           name="address"
-          ref={regionRef}
           width={200}
           height={44}
           placeholder={"Region"}
@@ -51,7 +73,6 @@ export const Filter = () => {
           defaultValue={query.get("city")}
           onChange={OnChange}
           name="city"
-          ref={cityRef}
           width={200}
           height={44}
           placeholder={"City"}
@@ -60,7 +81,6 @@ export const Filter = () => {
           defaultValue={query.get("zip_code")}
           onChange={OnChange}
           name="zip_code"
-          ref={zipCodeRef}
           width={200}
           height={44}
           placeholder={"Zip Code"}
@@ -68,14 +88,47 @@ export const Filter = () => {
       </Section>
       <h1 className="subTitle">Apartment info</h1>
       <Section>
-        <Input ref={roomsRef} width={200} placeholder={"Rooms"} />
-        <Input ref={sizeRef} width={200} placeholder={"Size"} />
-        <Input ref={sortRef} width={200} placeholder={"Sort"} />
+        <Input
+          defaultValue={query.get("room")}
+          onChange={OnChange}
+          name="room"
+          width={200}
+          placeholder={"Rooms"}
+        />
+        <SelectAnt onChange={handleSort} defaultValue={query.get("sort") || "Select"}>
+          <SelectAnt.Option value={"asc"}>
+            Ascending
+          </SelectAnt.Option>
+          <SelectAnt.Option value={"desc"}>
+            Descending
+          </SelectAnt.Option>
+        </SelectAnt>
+        <SelectAnt onChange={handleChange} defaultValue={value}>
+          {data.map((item) => {
+            return (
+              <SelectAnt.Option key={item.id} value={item?.id}>
+                {item?.name}
+              </SelectAnt.Option>
+            );
+          })}
+        </SelectAnt>
       </Section>
       <h1 className="subTitle">Price</h1>
       <Section>
-        <Input ref={minPriceRef} width={200} placeholder={"Min price"} />
-        <Input ref={maxPriceRef} width={200} placeholder={"Max price"} />
+        <Input
+          defaultValue={query.get("min_price")}
+          onChange={OnChange}
+          name="min_price"
+          width={200}
+          placeholder={"Min price"}
+        />
+        <Input
+          defaultValue={query.get("max_price")}
+          onChange={OnChange}
+          name="max_price"
+          width={200}
+          placeholder={"Max price"}
+        />
       </Section>
     </MenuWrapper>
   );
@@ -91,7 +144,7 @@ export const Filter = () => {
           overlay={items}
           menu={null}
           placement="bottomRight"
-          align={"center"}
+          align="center"
           arrow={{ pointAtCenter: true }}
           trigger="click"
         >
@@ -101,9 +154,8 @@ export const Filter = () => {
             </Button>
           </div>
         </Dropdown>
-        
+
         <Button icon={true} width={180} type={"primary"}>
-          {" "}
           <Icons.Search /> Search
         </Button>
       </Container>

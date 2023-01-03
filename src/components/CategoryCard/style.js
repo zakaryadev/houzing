@@ -42,15 +42,12 @@ const Content = styled.div`
   color: #ffffff;
 `;
 
-const Icons = styled.div`
-  
-`;
+const Icons = styled.div``;
 
 Icons.HouseIcon = styled(HouseIcon)`
   height: 60px;
   width: 60px;
   margin-bottom: 24px;
 `;
-
 
 export { Container, Img, Content, Icons, Blur };
