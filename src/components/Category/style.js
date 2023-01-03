@@ -40,7 +40,7 @@ const Content = styled.div`
   color: #ffffff;
 `;
 
-export { Content, Container, Arrow  };
+
 
 const Arrow = styled(arrow)`
   position: absolute;
@@ -63,3 +63,4 @@ const Arrow = styled(arrow)`
   drop-shadow(0px 7px 46px rgba(0, 0, 0, 0.06))
   drop-shadow(0px 8px 15px rgba(0, 0, 0, 0.06));
 `;
+export { Content, Container, Arrow  };
