@@ -36,14 +36,15 @@ export const Filter = () => {
       (ctg) => ctg.id === Number(query.get("category_id"))
     );
     res?.name && setValue(res?.name);
+    !query.get("category_id") && setValue('Select Category');
     // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [location?.search, data]);
 
   const handleChange = (category_id) => {
-    navigate(`/properties/${uzeReplace("category_id", category_id)}`);
+    navigate(`/properties${uzeReplace("category_id", category_id)}`);
   };
   const handleSort = (value) => {
-    navigate(`/properties/${uzeReplace("sort", value)}`);
+    navigate(`/properties${uzeReplace("sort", value)}`);
   }
   const OnChange = ({ target: { name, value } }) => {
     navigate(`${location?.pathname}${uzeReplace(name, value)}`);
@@ -95,22 +96,23 @@ export const Filter = () => {
           width={200}
           placeholder={"Rooms"}
         />
-        <SelectAnt onChange={handleSort} defaultValue={query.get("sort") || "Select"}>
-          <SelectAnt.Option value={"asc"}>
-            Ascending
-          </SelectAnt.Option>
-          <SelectAnt.Option value={"desc"}>
-            Descending
-          </SelectAnt.Option>
+        <Input
+          defaultValue={query.get("size")}
+          onChange={OnChange}
+          name="size"
+          width={200}
+          placeholder={"Count Elements"}
+        />
+        <SelectAnt onChange={handleSort} defaultValue={query.get("sort") || "Select Sort"}>
+          <SelectAnt.Option value={''}>Select Category</SelectAnt.Option>
+          <SelectAnt.Option value={"asc"}>Ascending</SelectAnt.Option>
+          <SelectAnt.Option value={"desc"}>Descending</SelectAnt.Option>
         </SelectAnt>
         <SelectAnt onChange={handleChange} defaultValue={value}>
-          {data.map((item) => {
-            return (
-              <SelectAnt.Option key={item.id} value={item?.id}>
-                {item?.name}
-              </SelectAnt.Option>
-            );
-          })}
+          <SelectAnt.Option value={''}>Select Category</SelectAnt.Option>
+          {data.map((item) => {return (
+              <SelectAnt.Option key={item.id} value={item?.id}>{item?.name}</SelectAnt.Option>
+            );})}
         </SelectAnt>
       </Section>
       <h1 className="subTitle">Price</h1>
