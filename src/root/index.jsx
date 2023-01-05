@@ -2,12 +2,18 @@ import React from 'react';
 import {BrowserRouter, Navigate, Route, Routes} from "react-router-dom";
 import Navbar from '../components/Navbar';
 import { navbar } from '../utils/navbar';
+import { Footer } from '../components/Footer';
 
 const Index = () => {
   return (
     <BrowserRouter>
       <Routes>
-        <Route element={<Navbar />}>
+        <Route element={
+          <>
+            <Navbar />
+            <Footer />
+          </>
+        }>
           {navbar.map(({element,path}, index) => {
               return <Route key={index} path={path} element={element}></Route>
           })}

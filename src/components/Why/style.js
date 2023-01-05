@@ -5,15 +5,16 @@ import { ReactComponent as calc } from "../../assets/icons/calculator.svg";
 import { ReactComponent as cardMap } from "../../assets/icons/cardMaps.svg";
 
 const Container = styled.div`
-  margin: 0 auto;
   width: 100%;
   background-color: #f5f7fc;
   padding: 48px 130px;
+  margin: 0 auto;
 `;
 
 const Content = styled.div`
+  display: flex;
   flex-direction: column;
-  align-items: center;
+  justify-content: center;
 `;
 
 Content.Wrapper = styled.div`
@@ -49,6 +50,9 @@ const Wrapper = styled.div`
   gap: 20px;
   grid-template-columns: repeat(auto-fill, minmax(235px, 285px));
   justify-content: space-around;
+  width: 100%;
+  max-width: 1440px;
+  margin: 0 auto;
 `;
 
 const Icons = styled.div``;

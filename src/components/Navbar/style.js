@@ -12,6 +12,11 @@ const Main = styled.div`
   display: flex;
   justify-content: center;
   background: var(--colorPrimary);
+  // position: sticky;
+  // top: 0;
+  // left: 0;
+  // right: 0;
+  // z-index: 20;
   color: #fff !important;
 `;
 

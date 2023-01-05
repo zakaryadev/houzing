@@ -4,7 +4,7 @@ import { HouseCard } from "../HouseCard";
 import { Arrow, Container } from "./style";
 import { useNavigate } from "react-router-dom";
 
-export default function Recommended() {
+export default function Recent() {
   const { REACT_APP_BASE_URL: url } = process.env;
   const [data, setData] = useState([]);
   const navigate = useNavigate();
@@ -42,12 +42,12 @@ export default function Recommended() {
   };
   return (
     <Container>
-      <h1 className={"sectionTitle"}> Recommended </h1>
+      <h1 className={"sectionTitle"}> Recent Properties for Rent </h1>
       <p className={"sectionSubTitle"}>
         Nulla quis curabitur velit volutpat auctor bibendum consectetur sit.
       </p>
       <Slider {...settings}>
-        {data.slice(3,7).map((item, index) => {
+        {data.slice(8,12).map((item, index) => {
           return (
             <HouseCard
               gap={20}
