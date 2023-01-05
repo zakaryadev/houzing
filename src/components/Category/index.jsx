@@ -1,7 +1,7 @@
 import React, { useEffect, useState } from "react";
 import Slider from "react-slick";
 import CategoryCard from "../CategoryCard";
-import { Arrow, Container } from "./style";
+import { Arrow, Container, Content } from "./style";
 import { useNavigate } from "react-router-dom";
 export default function Category() {
   const { REACT_APP_BASE_URL: url } = process.env;
@@ -39,11 +39,13 @@ export default function Category() {
     customPaging: (i) => <span className="dots"></span>,
   };
   return (
-    <Container style={{ color: "black" }}>
-      <h1 className={"sectionTitle"}> Category </h1>
-      <p className={"sectionSubTitle"}>
-        Nulla quis curabitur velit volutpat auctor bibendum consectetur sit.
-      </p>
+    <Container>
+      <Content>
+        <h1 className={"sectionTitle"}> Category </h1>
+        <p className={"sectionSubTitle"}>
+          Nulla quis curabitur velit volutpat auctor bibendum consectetur sit.
+        </p>
+      </Content>
       <Slider {...settings}>
         {data.map((item, index) => {
           return (

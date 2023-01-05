@@ -23,21 +23,12 @@ const Container = styled.div`
   height: fit-content;
   padding: 0 130px;
   max-width: 1440px;
-  margin: 0 auto 96px auto;
+  margin: 0 auto;
   width: 100%;
 `;
 
 const Content = styled.div`
-  position: absolute;
-  top: 0;
-  left: 0;
-  bottom: 0;
-  right: 0;
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  align-items: center;
-  color: #ffffff;
+  padding-top: 96px;
 `;
 
 const Arrow = styled(arrow)`
