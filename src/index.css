@@ -150,6 +150,9 @@ h3 {
   width: 10px;
   height: 10px;
   border-radius: 50%;
+  animation-name: perexod;
+  animation-duration: 0.5s;
+  animation-delay: 2;
 }
 
 .slick-dots {
@@ -165,5 +168,21 @@ h3 {
 
 .slick-prev {
   left: -10% !important;
+}
+
+.section-name {
+  padding: 64px 0;
+}
+
+@keyframes perexod {
+  0% {
+    transform: translateY(0);
+  }
+  50% {
+    transform: translateY(-15px);
+  }
+  100% {
+    transform: translateY(0);
+  }
 }
 

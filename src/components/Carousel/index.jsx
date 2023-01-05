@@ -1,35 +1,43 @@
 import React, { useRef } from "react";
-import { Arrow, Blur, Container, Content, Img } from "./style";
+import { Arrow, Container, Slider } from "./style";
 import { Carousel } from "antd";
 import img1 from "../../assets/img/house1.png";
 import img2 from "../../assets/img/house2.png";
 
 export const GenCarousel = () => {
-  const slider = useRef();
-  const onMove = ({
-    target: {
-      dataset: { name },
-    },
-  }) => {
-    if (name === "next") slider.current.next();
-    if (name === "prev") slider.current.prev();
+  const sliderRef = useRef();
+  const onMove = ({target: { dataset: { name }}}) => {
+    if (name === "next") sliderRef.current.next();
+    if (name === "prev") sliderRef.current.prev();
   };
   return (
     <Container>
-      <Carousel ref={slider}>
-        <Img src={img1} />
-        <Img src={img2} />
+      <Carousel ref={sliderRef}>
+        <Slider>
+          <Slider.Content>
+            <Slider.ContentTitle>Skype Pool Apartment</Slider.ContentTitle>
+            <Slider.ContentDesc className="subChild">
+            112 Glenwood Ave Hyde Park, Boston, MA
+            </Slider.ContentDesc>
+            <Slider.ContentPrice>5,250 / month</Slider.ContentPrice>
+          </Slider.Content>
+          <Slider.Bloor />
+          <Slider.Img src={img1} />
+        </Slider>
+        <Slider>
+          <Slider.Content>
+            <Slider.ContentTitle>Skype Pool Apartment</Slider.ContentTitle>
+            <Slider.ContentDesc className="subChild">
+            112 Glenwood Ave Hyde Park, Boston, MA
+            </Slider.ContentDesc>
+            <Slider.ContentPrice>5,250 / month</Slider.ContentPrice>
+          </Slider.Content>
+          <Slider.Bloor />
+          <Slider.Img src={img2} />
+        </Slider>
       </Carousel>
-      <Blur />
-      <Content>
-        <Content.Title>Skype Pool Apartment</Content.Title>
-        <Content.Desc className="subChild">
-          112 Glenwood Ave Hyde Park, Boston, MA
-        </Content.Desc>
-        <Content.Price>5,250 / month</Content.Price>
         <Arrow onClick={onMove} data-name="prev" to={"left"} />
         <Arrow onClick={onMove} data-name="next" to={"right"} />
-      </Content>
     </Container>
   );
 };

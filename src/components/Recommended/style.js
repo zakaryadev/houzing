@@ -21,23 +21,10 @@ const rotateArrow = ({ to }) => {
 const Container = styled.div`
   position: relative;
   height: fit-content;
-  padding: 0 130px;
+  padding: 96px 130px;
   max-width: 1440px;
-  margin: 0 auto 96px auto;
+  margin: 0 auto;
   width: 100%;
-`;
-
-const Content = styled.div`
-  position: absolute;
-  top: 0;
-  left: 0;
-  bottom: 0;
-  right: 0;
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  align-items: center;
-  color: #ffffff;
 `;
 
 const Arrow = styled(arrow)`
@@ -61,4 +48,5 @@ const Arrow = styled(arrow)`
     drop-shadow(0px 7px 46px rgba(0, 0, 0, 0.06))
     drop-shadow(0px 8px 15px rgba(0, 0, 0, 0.06));
 `;
-export { Content, Container, Arrow };
+
+export { Container, Arrow };

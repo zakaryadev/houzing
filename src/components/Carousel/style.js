@@ -36,24 +36,14 @@ const Arrow = styled(arrow)`
   :hover {
     background: rgba(255, 255, 255, 0.4);
   }
-  z-index: 5;
 `;
 
-const Img = styled.img`
-  width: 100%;
+const Slider = styled.div`
   height: 571px;
+  position: relative;
 `;
 
-const Blur = styled.div`
-  position: absolute;
-  top: 0;
-  right: 0;
-  bottom: 0;
-  left: 0;
-  background: rgba(0, 0, 0, 0.7);
-`;
-
-const Content = styled.div`
+Slider.Content = styled.div`
   position: absolute;
   top: 0;
   left: 0;
@@ -66,8 +56,10 @@ const Content = styled.div`
   color: #ffffff;
   max-width: 1440px;
   margin: 0 auto;
+  z-index: 9;
 `;
-Content.Title = styled.h1`
+
+Slider.ContentTitle = styled.h1`
   font-family: "Montserrat";
   font-style: normal;
   font-weight: 700;
@@ -77,7 +69,7 @@ Content.Title = styled.h1`
   color: #ffffff;
 `;
 
-Content.Desc = styled.div`
+Slider.ContentDesc = styled.div`
   font-family: "Montserrat";
   font-style: normal;
   font-weight: 400;
@@ -86,7 +78,7 @@ Content.Desc = styled.div`
   color: #ffffff;
 `;
 
-Content.Price = styled.div`
+Slider.ContentPrice = styled.div`
   font-family: "Montserrat";
   font-style: normal;
   font-weight: 600;
@@ -96,4 +88,19 @@ Content.Price = styled.div`
   color: #ffffff;
 `;
 
-export { Container, Arrow, Img, Blur, Content };
+Slider.Bloor = styled.div`
+  position: absolute;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  background: rgba(0, 0, 0, 0.7);
+  z-index: 5;
+`;
+
+Slider.Img = styled.img`
+  width: 100%;
+  height: 571px;
+`;
+
+export { Container, Arrow, Slider };

@@ -1,14 +1,15 @@
 import React, { useEffect, useState } from "react";
 import Slider from "react-slick";
-import CategoryCard from "../CategoryCard";
+import { HouseCard } from "../HouseCard";
 import { Arrow, Container } from "./style";
 import { useNavigate } from "react-router-dom";
-export default function Category() {
+
+export default function Recommended() {
   const { REACT_APP_BASE_URL: url } = process.env;
   const [data, setData] = useState([]);
   const navigate = useNavigate();
   useEffect(() => {
-    fetch(`${url}categories/list`)
+    fetch(`${url}houses/list`)
       .then((res) => res.json())
       .then((res) => {
         setData(res?.data || []);
@@ -19,12 +20,13 @@ export default function Category() {
     <div {...props}>{children}</div>
   );
   const settings = {
-    dots: true,
+    className: "center",
+    centerPadding: '25px',
     infinite: true,
-    slidesToShow: 4,
+    dots: true,
+    slidesToShow: 3,
     slidesToScroll: 1,
     speed: 500,
-    centerPadding: "20px",
     nextArrow: (
       <SlickButtonFix>
         <Arrow to={"right"} />
@@ -39,21 +41,20 @@ export default function Category() {
     customPaging: (i) => <span className="dots"></span>,
   };
   return (
-    <Container style={{ color: "black" }}>
-      <h1 className={"sectionTitle"}> Category </h1>
+    <Container>
+      <h1 className={"sectionTitle"}> Recommended </h1>
       <p className={"sectionSubTitle"}>
         Nulla quis curabitur velit volutpat auctor bibendum consectetur sit.
       </p>
       <Slider {...settings}>
-        {data.map((item, index) => {
+        {data.slice(3,7).map((item, index) => {
           return (
-            <div key={index}>
-              <CategoryCard
-                onClick={() => navigate(`/properties?category_id=${item?.id}`)}
-                data={item}
-                key={index}
-              />
-            </div>
+            <HouseCard
+              gap={30}
+              onClick={() => navigate(`/properties/houses/id/${item.id}`)}
+              data={item}
+              key={index}
+            />
           );
         })}
       </Slider>

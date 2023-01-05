@@ -1,15 +1,15 @@
 import React from "react";
-import {Container, Content, Details, Divider, Icons, Img} from "./style";
+import {Container, Content, Details, Icons, Img} from "./style";
 import noImg from '../../assets/img/noimg.jpeg';
-export const HouseCard = ({ data = {}}) => {
-  const { attachments, salePrice, price, houseDetails, address, city, country, description, category,} = data;
+export const HouseCard = ({ data = {}, gap, onClick}) => {
+  const { attachments, salePrice, price, houseDetails, address, city, country, description } = data;
   return (
-    <Container>
+    <Container onClick={onClick} gap={gap}>
       <Img src={(attachments && attachments[0]?.imgPath) || noImg}  />
       <Content>
         <div className='subTitle inline'>{city}, {country}, {description}</div>
         <div className='info'>{address || 'Quincy St, Brooklyn, NY, USA'} -{' '}
-          {category?.name || 'Category'} {houseDetails?.room || 0}-rooms</div>
+          {houseDetails?.room || 0}-rooms</div>
         <Details>
           <Details.Item>
             <Icons.Bed />
@@ -29,7 +29,7 @@ export const HouseCard = ({ data = {}}) => {
           </Details.Item>
         </Details>
       </Content>
-      <Divider />
+
       <Content footer>
         <Details.Item footer>
           <div className='info'>${salePrice}/mo</div>

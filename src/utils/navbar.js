@@ -4,6 +4,9 @@ import useId from "../hooks/useId";
 import ContactsPage from "../pages/Contacts/index";
 const HomePage = React.lazy(() => import("../pages/Home/index"));
 const PropertiesPage = React.lazy(() => import("../pages/Properties/index"));
+const HouseDetailsPage = React.lazy(() =>
+  import("../pages/HouseDetails/index")
+);
 export const navbar = [
   {
     id: useId,
@@ -41,6 +44,26 @@ export const navbar = [
     private: false,
     hidden: false,
   },
+
+  {
+    id: useId,
+    element: (
+      <React.Suspense
+        fallback={
+          <React.Fragment>
+            <Spinner />
+          </React.Fragment>
+        }
+      >
+        <HouseDetailsPage />
+      </React.Suspense>
+    ),
+    title: "HouseDetails",
+    path: "/properties/houses/id/:id",
+    private: true,
+    hidden: true,
+  },
+
   {
     id: useId,
     element: <ContactsPage />,

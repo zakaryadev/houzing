@@ -11,6 +11,7 @@ const Container = styled.div`
   display: inline-block;
   border-radius: 3px;
   background: #ffffff;
+  margin: 20px;
 `;
 
 const Blur = styled.div`

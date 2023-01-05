@@ -10,10 +10,15 @@ const Container = styled.div`
   height: 430px;
   min-width: 343px;
   max-width: 380px;
-  filter: drop-shadow(0px 20px 38px rgba(0, 0, 0, 0.06))
-    drop-shadow(0px 7px 46px rgba(0, 0, 0, 0.06))
-    drop-shadow(0px 8px 15px rgba(0, 0, 0, 0.06));
   border-radius: 3px;
+  margin: ${({ gap }) => gap && `${gap}px`};
+  :hover {
+    // filter: drop-shadow(0px 20px 38px rgba(0, 0, 0, 0.06))
+    //   drop-shadow(0px 7px 46px rgba(0, 0, 0, 0.06))
+    //   drop-shadow(0px 8px 15px rgba(0, 0, 0, 0.06));
+    box-shadow: 0px 7px 46px rgba(0, 0, 0, 0.06);
+  }
+  cursor: pointer;
 `;
 
 const Img = styled.img`
@@ -21,7 +26,7 @@ const Img = styled.img`
   width: 100%;
   min-height: 220px;
   max-height: 220px;
-  border: 1px solid transparent;
+  border: 1px solid #e6e9ec;
   border-bottom: none;
 `;
 
@@ -34,7 +39,6 @@ const Content = styled.div`
   padding: ${({ footer }) => footer && "10px 20px"};
   background: #ffffff;
   border: 1px solid #e6e9ec;
-  border-bottom: none;
   border-top: none;
 `;
 
