@@ -26,7 +26,7 @@ export const Properties = () => {
         </div>
       <Container>
         {data.length > 0 ?
-            (data.map((item, index) =><HouseCard onClick={() => navigate(`houses/id/${item.id}`)} key={index} data={item} />))
+            (data.map((item, index) =><HouseCard onClick={() => navigate(`${item.id}`)} key={index} data={item} />))
             :
             (<h1>Nothing Found</h1>)}
       </Container>

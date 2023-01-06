@@ -41,16 +41,16 @@ export const Footer = () => {
       <Content>
         <Content.Title>See Neighborhoods</Content.Title>
 
-        <Content.Item>t.me/webbrain_admin</Content.Item>
-        <Content.Item>t.me/webbrain_ceo</Content.Item>
-        <Content.Item>instagram.com/webbrain_admin</Content.Item>
-        <Content.Item>instagram.com/smd_94</Content.Item>
+        <Content.Item>t.me/zakdeveloper</Content.Item>
+        <Content.Item>t.me/zakariadev</Content.Item>
+        <Content.Item>instagram.com/zakaryadev13</Content.Item>
+        <Content.Item>instagram.com/zakaryadev13</Content.Item>
       </Content>
       </Wrapper>
     </Container>
       <Footergo>
         <Main>
-          <Wrapper>
+          <Wrapper.Footer>
             <Section onClick={() => navigate("/home")} logo>
               <Logo /> <h3>Houzing</h3>
             </Section>
@@ -58,7 +58,7 @@ export const Footer = () => {
             <Section>
               <div className="footer-info">Copyright © 2021 CreativeLayers. All Right Reserved.</div>
             </Section>
-          </Wrapper>
+          </Wrapper.Footer>
         </Main>
     </Footergo>
     </>

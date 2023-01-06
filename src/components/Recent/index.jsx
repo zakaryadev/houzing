@@ -51,7 +51,7 @@ export default function Recent() {
           return (
             <HouseCard
               gap={20}
-              onClick={() => navigate(`/properties/houses/id/${item.id}`)}
+              onClick={() => navigate(`/properties/${item.id}`)}
               data={item}
               key={index}
             />

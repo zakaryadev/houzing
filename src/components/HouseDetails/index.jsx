@@ -13,7 +13,6 @@ export const HouseDetails = () => {
       .then((res) => res.json())
       .then((res) => {
         setData(res?.data || []);
-        console.log(res);
       });
     // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [search]);

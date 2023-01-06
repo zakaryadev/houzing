@@ -93,6 +93,18 @@ const Wrapper = styled.div`
   max-width: 1440px;
 `;
 
+Wrapper.Footer = styled.div`
+  display: flex;
+  align-items: flex-start;
+  justify-content: space-between;
+  color: #fff;
+  padding: var(--padding);
+  font-size: 16px;
+  width: 100%;
+  max-width: 1440px;
+  align-items: center;
+`;
+
 const Section = styled.div`
   display: flex;
   align-items: center;
