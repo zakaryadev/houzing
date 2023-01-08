@@ -6,7 +6,7 @@ import { useNavigate } from "react-router-dom";
 export const Footer = () => {
   const navigate = useNavigate();
   return (
-    <>
+    <div>
     <Container>
         <Wrapper>
           <Content>
@@ -61,7 +61,7 @@ export const Footer = () => {
           </Wrapper.Footer>
         </Main>
     </Footergo>
-    </>
+    </div>
   );
 };
 

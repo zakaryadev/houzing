@@ -1,6 +1,7 @@
 import { NavLink } from "react-router-dom";
 import styled from "styled-components";
 import { ReactComponent as LogoImg } from "../../assets/icons/logo.svg";
+import { ReactComponent as User } from "../../assets/icons/user.svg";
 
 const Container = styled.div`
   display: flex;
@@ -60,4 +61,14 @@ const Link = styled(NavLink)`
   }
 `;
 
-export { Container, Wrapper, Section, Logo, Link, Main };
+const Icon = styled.div``;
+
+Icon.User = styled(User)`
+  width: 24px;
+  height: 24px;
+  & path {
+    fill: #ffffff;
+  }
+`;
+
+export { Container, Wrapper, Section, Logo, Link, Main, Icon };

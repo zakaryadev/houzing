@@ -21,7 +21,7 @@ export default function Recent() {
   );
   const settings = {
     className: "center",
-    centerPadding: '25px',
+    centerPadding: "25px",
     infinite: true,
     dots: true,
     slidesToShow: 3,
@@ -47,7 +47,7 @@ export default function Recent() {
         Nulla quis curabitur velit volutpat auctor bibendum consectetur sit.
       </p>
       <Slider {...settings}>
-        {data.slice(8,12).map((item, index) => {
+        {data.slice(8, 12).map((item, index) => {
           return (
             <HouseCard
               gap={20}

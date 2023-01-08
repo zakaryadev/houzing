@@ -2,11 +2,13 @@ import React from "react";
 import Spinner from "../components/Spinner/Spinner";
 import useId from "../hooks/useId";
 import ContactsPage from "../pages/Contacts/index";
+import { SignInPage } from "../pages/SignIn";
 const HomePage = React.lazy(() => import("../pages/Home/index"));
 const PropertiesPage = React.lazy(() => import("../pages/Properties/index"));
 const HouseDetailsPage = React.lazy(() =>
   import("../pages/HouseDetails/index")
 );
+
 export const navbar = [
   {
     id: useId,
@@ -74,7 +76,7 @@ export const navbar = [
   },
   {
     id: useId,
-    element: <h1>Sign in</h1>,
+    element: <SignInPage />,
     title: "Sign in",
     path: "/signin",
     private: false,
@@ -86,6 +88,30 @@ export const navbar = [
     title: "Sign up",
     path: "/signup",
     private: false,
+    hidden: true,
+  },
+  {
+    id: useId,
+    element: <h1>My Profile</h1>,
+    title: "Profile",
+    path: "/profile",
+    private: true,
+    hidden: true,
+  },
+  {
+    id: useId,
+    element: <h1>My properties</h1>,
+    title: "Properties",
+    path: "/myproperties",
+    private: true,
+    hidden: true,
+  },
+  {
+    id: useId,
+    element: <h1>My favourites</h1>,
+    title: "Favourites",
+    path: "/favourite",
+    private: true,
     hidden: true,
   },
 ];

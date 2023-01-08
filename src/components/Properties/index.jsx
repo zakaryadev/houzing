@@ -2,17 +2,18 @@ import React, { useEffect, useState } from "react";
 import { Container, Wrapper } from "./styles";
 import HouseCard from "../HouseCard";
 import { useLocation, useNavigate } from "react-router-dom";
+import { useRequest } from "../../hooks/useRequest";
+import NoData from "../NoData";
+
 export const Properties = () => {
   const [data, setData] = useState([]);
-  const { REACT_APP_BASE_URL: url } = process.env;
   const { search } = useLocation();
   const navigate = useNavigate();
+  const request = useRequest();
   useEffect(() => {
-    fetch(`${url}houses/list${search}`)
-      .then((res) => res.json())
-      .then((res) => {
-        setData(res?.data || []);
-      });
+    request({ url: `houses/list${search}` }).then((res) => {
+      setData(res?.data || []);
+    });
     // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [search]);
 
@@ -23,13 +24,24 @@ export const Properties = () => {
         <p className={"sectionSubTitle"}>
           Nulla quis curabitur velit volutpat auctor bibendum consectetur sit.
         </p>
-        </div>
-      <Container>
-        {data.length > 0 ?
-            (data.map((item, index) =><HouseCard onClick={() => navigate(`${item.id}`)} key={index} data={item} />))
-            :
-            (<h1>Nothing Found</h1>)}
-      </Container>
+      </div>
+      <div className="count-sort">
+        <p>123123 results</p>
+        
+      </div>
+      {data.length <= 0 ? (
+        <NoData />
+      ) : (
+        <Container>
+          {data.map((item, index) => (
+            <HouseCard
+              onClick={() => navigate(`${item.id}`)}
+              key={index}
+              data={item}
+            />
+          ))}
+        </Container>
+      )}
     </Wrapper>
   );
 };

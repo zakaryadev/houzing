@@ -30,8 +30,6 @@ const getType = ({ type }) => {
   }
 };
 
-
-
 const Container = styled.button`
   display: flex;
   justify-content: center;

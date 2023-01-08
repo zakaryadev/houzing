@@ -2,12 +2,13 @@ import React, { useEffect, useState } from "react";
 import { Container, Wrapper } from "./styles";
 import HouseCard from "../HouseCard";
 import { useLocation, useParams } from "react-router-dom";
+import NoData from "../NoData";
 
 export const HouseDetails = () => {
   const [data, setData] = useState([]);
   const { REACT_APP_BASE_URL: url } = process.env;
   const { search } = useLocation();
-  const {id} = useParams();
+  const { id } = useParams();
   useEffect(() => {
     fetch(`${url}houses/id/${id}`)
       .then((res) => res.json())
@@ -15,8 +16,8 @@ export const HouseDetails = () => {
         setData(res?.data || []);
       });
     // eslint-disable-next-line react-hooks/exhaustive-deps
-  }, [search]);
-
+  }, [id]);
+  console.log(data);
   return (
     <Wrapper>
       <div className="section-name">
@@ -24,13 +25,12 @@ export const HouseDetails = () => {
         <p className={"sectionSubTitle"}>
           Nulla quis curabitur velit volutpat auctor bibendum consectetur sit.
         </p>
-        </div>
-      <Container>
-        {data.length > 0 ?
-            (data.map((item, index) =><HouseCard key={index} data={item} />))
-            :
-            (<h1>Nothing Found</h1>)}
-      </Container>
+      </div>
+      {data ? (
+        <Container>{JSON.stringify(data, 2, " ")}</Container>
+      ) : (
+        <NoData />
+      )}
     </Wrapper>
   );
 };
