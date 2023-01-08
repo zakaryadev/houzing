@@ -1,13 +1,11 @@
 import React, { useEffect, useState } from "react";
 import { Container, Wrapper } from "./styles";
-import HouseCard from "../HouseCard";
-import { useLocation, useParams } from "react-router-dom";
+import { useParams } from "react-router-dom";
 import NoData from "../NoData";
 
 export const HouseDetails = () => {
   const [data, setData] = useState([]);
   const { REACT_APP_BASE_URL: url } = process.env;
-  const { search } = useLocation();
   const { id } = useParams();
   useEffect(() => {
     fetch(`${url}houses/id/${id}`)
