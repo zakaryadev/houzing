@@ -25,10 +25,10 @@ export const Properties = () => {
           Nulla quis curabitur velit volutpat auctor bibendum consectetur sit.
         </p>
       </div>
-      <div className="count-sort">
+      {/* <div className="count-sort">
         <p>123123 results</p>
         
-      </div>
+      </div> */}
       {data.length <= 0 ? (
         <NoData />
       ) : (

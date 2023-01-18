@@ -4,10 +4,10 @@ import noImg from '../../assets/img/noimg.jpeg';
 export const HouseCard = ({ data = {}, gap, onClick}) => {
   const { attachments, salePrice, price, houseDetails, address, city, country, description } = data;
   return (
-    <Container gap={gap}>
+    <Container gap={gap} onClick={onClick}>
       <Img src={(attachments && attachments[0]?.imgPath) || noImg}  />
       <Content>
-        <div className='subTitle inline' onClick={onClick}>{city}, {country}, {description}</div>
+        <div className='subTitle inline'>{city}, {country}, {description}</div>
         <div className='info'>{address || 'Quincy St, Brooklyn, NY, USA'} -{' '}
           {houseDetails?.room || 0}-rooms</div>
         <Details>
