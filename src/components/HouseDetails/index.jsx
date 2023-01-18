@@ -22,7 +22,7 @@ export const HouseDetails = () => {
       });
     // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [id]);
-  console.log(data);
+
   return (
     <Wrapper gap={20}>
       {!Object.keys(data).length ? (
