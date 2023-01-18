@@ -14,6 +14,8 @@ const Container = styled.div`
   ~ .user {
     border: 1px solid #E6E9EC;
     border-radius: 3px;
+    background-color: #FFFFFF;
+    padding: 24px;
   }
 `;
 
@@ -210,7 +212,7 @@ Description.Content = styled.div`
   font-weight: 400;
   font-size: 14px;
   line-height: 20px;
-  height: 150px;
+  height: 50px;
   color: #696969;
   overflow: hidden;
 `;

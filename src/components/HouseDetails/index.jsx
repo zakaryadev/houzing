@@ -5,7 +5,7 @@ import {
   Container, Content, Section, Icons, Details,
   Description, Title, Location, Wrapper
 } from "./styles";
-import {Button} from "../Generic";
+import { Button, Input } from "../Generic";
 
 
 export const HouseDetails = () => {
@@ -23,7 +23,7 @@ export const HouseDetails = () => {
       });
     // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [id]);
-  console.log(data);
+
   return (
     <Wrapper gap={20}>
       {!Object.keys(data).length ? (
@@ -32,7 +32,7 @@ export const HouseDetails = () => {
         </Container>
       ) :
           <>
-            <Container flex={3}>
+            <Container flex={3.8}>
     
               <Section>
                 <Content>
@@ -95,8 +95,8 @@ export const HouseDetails = () => {
                 <Description>
                   <Title>Description</Title>
                   <Description.Gradient style={{display: visible ? "none" : "block"}} />
-                  <Description.Content style={{overflow: visible ? "visible" : "hidden", height: visible ? 'fit-content' : '150px'}} >
-                    {data?.description.length > 30 ? data?.description :
+                  <Description.Content style={{overflow: visible ? "visible" : "hidden", height: visible ? 'fit-content' : '10px'}} >
+                    {data?.description != null ? data?.description :
                       "Porta senectus ex tortor rutrum magna. Tempus natoque tortor ipsum suscipit hac ultrices orci. Interdum vestibulum cubilia nascetur sem orci inceptos magnis duis vitae enim. Sodales pulvinar sed laoreet elementum justo litora tristique erat taciti. Nisi amet risus mattis interdum dictum mollis magna donec fames ipsum. Lectus non leo platea maximus eros conubia.Porta senectus ex tortor rutrum magna. Tempus natoque tortor ipsum suscipit hac ultrices orci. Interdum vestibulum cubilia nascetur sem orci inceptos magnis duis vitae enim. Sodales pulvinar sed laoreet elementum justo litora tristique erat taciti. Nisi amet risus mattis interdum dictum mollis magna donec fames ipsum. Lectus non leo platea maximus eros conubia.Porta senectus ex tortor rutrum magna. Tempus natoque tortor ipsum suscipit hac ultrices orci. Interdum vestibulum cubilia nascetur sem orci inceptos magnis duis vitae enim. Sodales pulvinar sed laoreet elementum justo litora tristique erat taciti. Nisi amet risus mattis interdum dictum mollis magna donec fames ipsum. Lectus non leo platea maximus eros conubia." +
                       "Tempus natoque tortor ipsum suscipit hac ultrices orci. Interdum vestibulum cubilia nascetur sem orci inceptos magnis duis vitae enim. Sodales pulvinar sed laoreet elementum justo litora tristique erat taciti. Nisi amet risus mattis interdum dictum mollis magna donec fames ipsum. Lectus non leo platea maximus eros conubia.Porta senectus ex tortor rutrum magna. Tempus natoque tortor ipsum suscipit hac ultrices orci. Interdum vestibulum cubilia nascetur sem orci inceptos magnis duis vitae enim. Sodales pulvinar sed laoreet elementum justo litora tristique erat taciti. Nisi amet risus mattis interdum dictum mollis magna donec fames ipsum. Lectus non leo platea maximus eros conubia" +
                       "Porta senectus ex tortor rutrum magna. Tempus natoque tortor ipsum suscipit hac ultrices orci. Interdum vestibulum cubilia nascetur sem orci inceptos magnis duis vitae enim. Sodales pulvinar sed laoreet elementum justo litora tristique erat taciti. Nisi amet risus mattis interdum dictum mollis magna donec fames ipsum. Lectus non leo platea maximus eros conubia.Porta senectus ex tortor rutrum magna. Tempus natoque tortor ipsum suscipit hac ultrices orci. Interdum vestibulum cubilia nascetur sem orci inceptos magnis duis vitae enim. Sodales pulvinar sed laoreet elementum justo litora tristique erat taciti. Nisi amet risus mattis interdum dictum mollis magna donec fames ipsum. Lectus non leo platea maximus eros conubia.Porta senectus ex tortor rutrum magna. Tempus natoque tortor ipsum suscipit hac ultrices orci. Interdum vestibulum cubilia nascetur sem orci inceptos magnis duis vitae enim. Sodales pulvinar sed laoreet elementum justo litora tristique erat taciti. Nisi amet risus mattis interdum dictum mollis magna donec fames ipsum. Lectus non leo platea maximus eros conubia." +
@@ -118,7 +118,10 @@ export const HouseDetails = () => {
   
   
             </Container>
-            <Container flex={1} className='user'>User</Container>
+            
+            <Container flex={1} className='user'>
+              <Input placeholder={'Name'} />
+            </Container>
           </>
       }
     </Wrapper>
