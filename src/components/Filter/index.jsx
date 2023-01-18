@@ -36,7 +36,7 @@ export const Filter = () => {
       (ctg) => ctg.id === Number(query.get("category_id"))
     );
     res?.name && setValue(res?.name);
-    !query.get("category_id") && setValue('Select Category');
+    !query.get("category_id") && setValue("Select Category");
     // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [location?.search, data]);
 
@@ -45,7 +45,7 @@ export const Filter = () => {
   };
   const handleSort = (value) => {
     navigate(`/properties${uzeReplace("sort", value)}`);
-  }
+  };
   const OnChange = ({ target: { name, value } }) => {
     navigate(`${location?.pathname}${uzeReplace(name, value)}`);
   };
@@ -55,7 +55,7 @@ export const Filter = () => {
       <h1 className="subTitle">Address</h1>
       <Section>
         <Input
-          defaultValue={query.get("country")}
+          defaultValue={location.search && query.get("country")}
           onChange={OnChange}
           name="country"
           width={200}
@@ -63,7 +63,7 @@ export const Filter = () => {
           placeholder={"Country"}
         />
         <Input
-          defaultValue={query.get("address")}
+          defaultValue={location.search && query.get("address")}
           onChange={OnChange}
           name="address"
           width={200}
@@ -71,7 +71,7 @@ export const Filter = () => {
           placeholder={"Region"}
         />
         <Input
-          defaultValue={query.get("city")}
+          defaultValue={location.search && query.get("city")}
           onChange={OnChange}
           name="city"
           width={200}
@@ -79,7 +79,7 @@ export const Filter = () => {
           placeholder={"City"}
         />
         <Input
-          defaultValue={query.get("zip_code")}
+          defaultValue={location.search && query.get("zip_code")}
           onChange={OnChange}
           name="zip_code"
           width={200}
@@ -90,29 +90,36 @@ export const Filter = () => {
       <h1 className="subTitle">Apartment info</h1>
       <Section>
         <Input
-          defaultValue={query.get("room")}
+          defaultValue={location.search && query.get("room")}
           onChange={OnChange}
           name="room"
           width={200}
           placeholder={"Rooms"}
         />
         <Input
-          defaultValue={query.get("size")}
+          defaultValue={location.search && query.get("size")}
           onChange={OnChange}
           name="size"
           width={200}
           placeholder={"Count Elements"}
         />
-        <SelectAnt onChange={handleSort} defaultValue={query.get("sort") || "Select Sort"}>
-          <SelectAnt.Option value={''}>Select Category</SelectAnt.Option>
+        <SelectAnt
+          onChange={handleSort}
+          defaultValue={query.get("sort") || "Select Sort"}
+        >
+          <SelectAnt.Option value={""}>Select Category</SelectAnt.Option>
           <SelectAnt.Option value={"asc"}>Ascending</SelectAnt.Option>
           <SelectAnt.Option value={"desc"}>Descending</SelectAnt.Option>
         </SelectAnt>
         <SelectAnt onChange={handleChange} defaultValue={value}>
-          <SelectAnt.Option value={''}>Select Category</SelectAnt.Option>
-          {data.map((item) => {return (
-              <SelectAnt.Option key={item.id} value={item?.id}>{item?.name}</SelectAnt.Option>
-            );})}
+          <SelectAnt.Option value={""}>Select Category</SelectAnt.Option>
+          {data.map((item) => {
+            return (
+              <SelectAnt.Option key={item.id} value={item?.id}>
+                {item?.name}
+              </SelectAnt.Option>
+            );
+          })}
         </SelectAnt>
       </Section>
       <h1 className="subTitle">Price</h1>

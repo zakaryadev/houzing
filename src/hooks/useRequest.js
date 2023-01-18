@@ -9,6 +9,7 @@ export const useRequest = () => {
     headers = {},
   }) => {
     if (localStorage.getItem("token")) {
+      console.log(localStorage.getItem("token"));
       headers.Authorization = `Bearer ${localStorage.getItem("token")}`;
     }
 

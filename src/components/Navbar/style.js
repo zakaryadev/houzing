@@ -61,11 +61,15 @@ const Link = styled(NavLink)`
   }
 `;
 
-const Icon = styled.div``;
+const Icon = styled.img``;
 
 Icon.User = styled(User)`
-  width: 24px;
-  height: 24px;
+  cursor: pointer;
+  margin: 5px;
+  padding: 5px;
+  box-sizing: border-box;
+  width: 30px;
+  height: 30px;
   & path {
     fill: #ffffff;
   }

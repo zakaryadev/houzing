@@ -56,7 +56,7 @@ export const Footer = () => {
             </Section>
             
             <Section>
-              <div className="footer-info">Copyright © 2021 CreativeLayers. All Right Reserved.</div>
+              <div className="footer-info">Copyright © {new Date().getFullYear()} CreativeLayers. All Right Reserved.</div>
             </Section>
           </Wrapper.Footer>
         </Main>
