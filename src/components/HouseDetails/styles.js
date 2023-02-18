@@ -10,12 +10,20 @@ import { ReactComponent as calendar } from "../../assets/icons/calendar.svg";
 const Container = styled.div`
   display: flex;
   flex-direction: column;
-  flex: ${({flex}) => flex};
+  flex: ${({ flex }) => flex};
   ~ .user {
-    border: 1px solid #E6E9EC;
+    border: 1px solid #e6e9ec;
     border-radius: 3px;
-    background-color: #FFFFFF;
+    background-color: #ffffff;
     padding: 24px;
+    display: flex;
+    flex-direction: column;
+    gap: 24px;
+    height: fit-content;
+    .ant-checkbox-input {
+      width: 18px;
+      height: 18px;
+    }
   }
 `;
 
@@ -26,15 +34,16 @@ const Wrapper = styled.div`
   margin-top: 24px;
   padding: var(--padding);
   display: flex;
-  gap: ${({gap}) => gap && `${gap}px`}
+  gap: ${({ gap }) => gap && `${gap}px`};
 `;
-
 
 const Section = styled.div`
   display: flex;
-  flex-direction: ${({row}) => !row ? 'row' : "column"};
+  flex-direction: ${({ row }) => (!row ? "row" : "column")};
   justify-content: space-between;
   width: 100%;
+  margin-bottom: ${({ mb }) => mb && mb + "px"};
+  gap: ${({ gap }) => gap && `${gap}px`};
 `;
 
 const Content = styled.div`
@@ -42,6 +51,17 @@ const Content = styled.div`
   align-items: ${({ flex }) => flex && "center"};
   justify-content: ${({ flex }) => !flex && "center"};
   flex-direction: ${({ flex }) => !flex && "column"};
+  gap: ${({ gap }) => gap && `${gap}px`};
+  & img {
+    cursor: pointer;
+    :active {
+      transform: scale(0.9);
+    }
+    width: 16px;
+    border-radius: ${({ user }) => user && "50%"};
+    box-shadow: ${({ user }) => user && "0px 0px 10px rgba(13, 38, 59, 0.2);"};
+    height: 16px;
+  }
 `;
 
 Content.Title = styled.h1`
@@ -203,6 +223,7 @@ const Title = styled.div`
   font-size: 18px;
   line-height: 28px;
   color: #0d263b;
+  margin-bottom: 24px;
 `;
 
 Description.Content = styled.div`
@@ -225,12 +246,34 @@ Description.Gradient = styled.div`
   left: 0;
   right: 0;
   background: linear-gradient(180deg, rgba(255, 255, 255, 0) 0%, #ffffff 100%);
-`
-
-const Location = styled.div`
-  margin-top: 64px;
 `;
 
+const User = styled.div`
+  display: flex;
+  gap: 10px;
+`;
 
+User.Img = styled.img`
+  width: 56px;
+  height: 56px;
+  border-radius: 56px;
+`;
 
-export { Container, Content, Section, Icons, Details, Description, Title, Location, Wrapper };
+const Box = styled.div`
+  display: flex;
+  flex-direction: column;
+  gap: 24px;
+`;
+
+export {
+  Container,
+  Content,
+  Section,
+  Icons,
+  Details,
+  Description,
+  Title,
+  Wrapper,
+  User,
+  Box,
+};

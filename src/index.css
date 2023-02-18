@@ -150,7 +150,7 @@ h3 {
   width: 10px;
   height: 10px;
   border-radius: 50%;
-  animation-name: perexod;
+  animation-name: transition-1;
   animation-duration: 0.5s;
   animation-delay: 2;
 }
@@ -174,7 +174,7 @@ h3 {
   padding: 64px 0;
 }
 
-@keyframes perexod {
+@keyframes transition-1 {
   0% {
     transform: translateY(0);
   }
@@ -230,3 +230,4 @@ a {
   flex-direction: column;
   justify-content: space-between;
 }
+
