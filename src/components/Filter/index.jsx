@@ -50,7 +50,7 @@ export const Filter = () => {
     navigate(`${location?.pathname}${uzeReplace(name, value)}`);
   };
 
-  const items = (
+  const menu = (
     <MenuWrapper shadow={true}>
       <h1 className="subTitle">Address</h1>
       <Section>
@@ -150,7 +150,7 @@ export const Filter = () => {
           icon={<Icons.Houses />}
         />
         <Dropdown
-          overlay={items}
+          overlay={menu}
           menu={null}
           placement="bottomRight"
           align="center"

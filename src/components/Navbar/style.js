@@ -1,7 +1,6 @@
 import { NavLink } from "react-router-dom";
 import styled from "styled-components";
 import { ReactComponent as LogoImg } from "../../assets/icons/logo.svg";
-import { ReactComponent as User } from "../../assets/icons/user.svg";
 
 const Container = styled.div`
   display: flex;
@@ -61,15 +60,13 @@ const Link = styled(NavLink)`
   }
 `;
 
-const Icon = styled.img``;
-
-Icon.User = styled(User)`
+const Icon = styled.img`
   cursor: pointer;
   margin: 5px;
   padding: 5px;
   box-sizing: border-box;
-  width: 30px;
-  height: 30px;
+  width: 26px;
+  height: 26px;
   & path {
     fill: #ffffff;
   }

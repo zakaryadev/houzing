@@ -6,9 +6,11 @@ import { Button } from "../Generic";
 import Filter from "../Filter";
 import Footer from "../Footer";
 import { Dropdown } from "antd";
+import user from "../../assets/icons/user.svg";
 
 const Navbar = () => {
   const navigate = useNavigate();
+  const token = localStorage.getItem("token");
   const nav = (path) => {
     navigate(path);
   };
@@ -61,14 +63,16 @@ const Navbar = () => {
             })}
           </Section>
           <Section>
-            {localStorage.getItem("token") &&
-            localStorage.getItem("token").length > 0 ? (
+            {token && token.length > 0 ? (
               <Dropdown
                 menu={{ items }}
                 placement="bottomRight"
                 trigger="click"
               >
-                <Icon.User />
+                <Button type={"dark"}>
+                  <Icon src={user} />
+                  My Profile
+                </Button>
               </Dropdown>
             ) : (
               <Button onClick={() => navigate("/signin")} type={"dark"}>

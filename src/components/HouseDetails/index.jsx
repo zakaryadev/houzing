@@ -67,6 +67,7 @@ export const HouseDetails = () => {
         </Wrapper>
       ) : (
         <React.Fragment>
+          <Wrapper className="asdasd"></Wrapper>
           <Wrapper gap={20}>
             <Container flex={4}>
               <Section>
@@ -145,7 +146,7 @@ export const HouseDetails = () => {
                   <Description.Content
                     style={{
                       overflow: visible ? "visible" : "hidden",
-                      height: visible ? "fit-content" : "10px",
+                      height: visible ? "fit-content" : "100px",
                     }}
                   >
                     {data?.description != null
@@ -158,7 +159,7 @@ export const HouseDetails = () => {
                   type={"light"}
                   onClick={() => setVisible(!visible)}
                 >
-                  Show More
+                  {!visible ? "Show More" : "Hide..."}
                 </Button>
               </Section>
             </Container>
@@ -182,7 +183,9 @@ export const HouseDetails = () => {
 
           <Wrapper gap={20}>
             <Section row mb={48}>
-              <YandexMap />
+              <YandexMap
+                center={[data?.locations?.latitude, data?.locations?.longitude]}
+              />
             </Section>
           </Wrapper>
 
