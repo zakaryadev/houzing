@@ -184,7 +184,7 @@ export const HouseDetails = () => {
           <Wrapper gap={20}>
             <Section row mb={48}>
               <YandexMap
-                center={[data?.locations?.latitude, data?.locations?.longitude]}
+                mark={[data?.location?.latitude, data?.location?.longitude]}
               />
             </Section>
           </Wrapper>

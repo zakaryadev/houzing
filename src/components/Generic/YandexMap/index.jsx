@@ -10,12 +10,12 @@ const mapStyle = {
   overflow: "hidden",
 };
 
-const YandexMap = ({ center }) => {
+const YandexMap = ({ mark }) => {
   return (
     <YMaps>
       <Map
         style={mapStyle}
-        defaultState={{ center: center || [42.461891, 59.616631], zoom: 12 }}
+        defaultState={{ center: mark || [42.461891, 59.616631], zoom: 12 }}
       >
         <Placemark key={2} geometry={[42.461891, 59.616631]} />
       </Map>
